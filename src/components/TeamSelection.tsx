@@ -15,7 +15,6 @@ const TeamSelection: React.FC<Props> = ({ teams, onCreateTeam }) => (
       ))}
     </ul>
     <AddTeamForm onSubmit={onCreateTeam} />
-    <button>Start</button>
   </>
 );
 
