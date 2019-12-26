@@ -12,6 +12,7 @@
     "@types/react-dom": "^16.9.0",
     "husky": "^3.1.0",
     "lint-staged": "^9.5.0",
+    "lodash": "^4.17.15",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -49,5 +50,8 @@
       "prettier --write",
       "git add"
     ]
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.149"
   }
 }
