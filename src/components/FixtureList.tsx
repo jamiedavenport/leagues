@@ -1,5 +1,6 @@
 import React from "react";
 import { Fixture } from "../fixture/types";
+import FixtureResult from "./FixtureResult";
 
 interface Props {
   fixtures: Fixture[];
@@ -8,13 +9,9 @@ interface Props {
 const FixtureList: React.FC<Props> = ({ fixtures }) => (
   <>
     <h2>Fixture List</h2>
-    <ul>
-      {fixtures.map(fixture => (
-        <li>
-          {fixture.homeTeam} - {fixture.awayTeam}
-        </li>
-      ))}
-    </ul>
+    {fixtures.map(fixture => (
+      <FixtureResult fixture={fixture} />
+    ))}
   </>
 );
 
