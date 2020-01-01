@@ -3,11 +3,13 @@ import TeamSelection from "./components/TeamSelection";
 import FixtureList from "./components/FixtureList";
 import { Fixture } from "./fixture/types";
 import { generateFixtures } from "./fixture/generate";
+import { Table } from "./table/types";
 
 const App: React.FC = () => {
   const [started, setStarted] = useState(false);
   const [teams, setTeams] = useState<string[]>([]);
   const [fixtures, setFixtures] = useState<Fixture[]>([]);
+  const [table, setTable] = useState<Table>();
 
   const handleCreateTeam = (team: string) => {
     setTeams([...teams, team]);
