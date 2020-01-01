@@ -1,6 +1,5 @@
-import { Table } from "./types";
-import { zeroStanding } from "./util";
+import { Table, Standing } from "./types";
 
 export const emptyTable = (teams: string[]): Table => ({
-  standings: teams.sort().map(team => zeroStanding(team))
+  standings: teams.sort().map(team => new Standing(team))
 });

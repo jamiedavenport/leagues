@@ -1,6 +1,5 @@
 import { calculateTable } from "../calculate";
 import { Fixture } from "../../fixture/types";
-import { Table } from "../types";
 
 test("calculate table", () => {
   const fixtures: Fixture[] = [
@@ -42,41 +41,12 @@ test("calculate table", () => {
     }
   ];
 
-  const expectedTable: Table = {
-    standings: [
-      {
-        team: "Doncaster",
-        played: 3,
-        won: 1,
-        drawn: 2,
-        lost: 0,
-        goalsFor: 5,
-        goalsAgainst: 4,
-        points: 5
-      },
-      {
-        team: "Manchester",
-        played: 2,
-        won: 1,
-        drawn: 1,
-        lost: 0,
-        goalsFor: 4,
-        goalsAgainst: 1,
-        points: 4
-      },
-      {
-        team: "Leeds",
-        played: 3,
-        won: 0,
-        drawn: 1,
-        lost: 2,
-        goalsFor: 3,
-        goalsAgainst: 7,
-        points: 1
-      }
-    ]
-  };
-
   const table = calculateTable(fixtures);
-  expect(table).toEqual(expectedTable);
+  expect(table.standings[0].team).toEqual("Doncaster");
+  expect(table.standings[1].team).toEqual("Manchester");
+  expect(table.standings[2].team).toEqual("Leeds");
+
+  expect(table.standings[0].points).toBe(5);
+  expect(table.standings[1].points).toBe(4);
+  expect(table.standings[2].points).toBe(1);
 });

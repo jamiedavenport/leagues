@@ -16,6 +16,7 @@ const table: Table = {
       lost: 0,
       goalsFor: 10,
       goalsAgainst: 3,
+      goalDifference: 7,
       points: 7
     },
     {
@@ -26,6 +27,7 @@ const table: Table = {
       lost: 2,
       goalsFor: 3,
       goalsAgainst: 10,
+      goalDifference: -7,
       points: 1
     }
   ]
