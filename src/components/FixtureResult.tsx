@@ -1,6 +1,5 @@
 import React, { FormEvent } from "react";
 import { Fixture } from "../fixture/types";
-import { number } from "prop-types";
 
 interface Props {
   fixture: Fixture;
