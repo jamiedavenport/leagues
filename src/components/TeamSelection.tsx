@@ -11,7 +11,7 @@ const TeamSelection: React.FC<Props> = ({ teams, onCreateTeam }) => (
     <h2>Team Selection</h2>
     <ul>
       {teams.map(team => (
-        <li>{team}</li>
+        <li key={team}>{team}</li>
       ))}
     </ul>
     <AddTeamForm onSubmit={onCreateTeam} />

@@ -28,9 +28,13 @@ const App: React.FC = () => {
     );
   }
 
+  const handleFixturesChange = (updatedFixtures: Fixture[]) => {
+    setFixtures(updatedFixtures);
+  };
+
   return (
     <>
-      <FixtureList fixtures={fixtures} />
+      <FixtureList fixtures={fixtures} onChange={handleFixturesChange} />
       <b>Live Table</b>
     </>
   );
