@@ -1,5 +1,6 @@
 import React, { FormEvent } from "react";
 import { Fixture } from "../fixture/types";
+import Input from "./Input";
 
 interface Props {
   fixture: Fixture;
@@ -37,9 +38,9 @@ const FixtureResult: React.FC<Props> = ({ fixture, onChange }) => {
 
   return (
     <div>
-      <input value={fixture.homeScore || ""} onChange={handleHomeChange} />
+      <Input value={fixture.homeScore || ""} onChange={handleHomeChange} />
       {fixture.homeTeam} - {fixture.awayTeam}
-      <input value={fixture.awayScore || ""} onChange={handleAwayChange} />
+      <Input value={fixture.awayScore || ""} onChange={handleAwayChange} />
     </div>
   );
 };
