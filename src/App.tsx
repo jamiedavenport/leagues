@@ -7,6 +7,7 @@ import { Table } from "./table/types";
 import LeagueTable from "./components/LeagueTable";
 import { emptyTable } from "./table/empty";
 import { calculateTable } from "./table/calculate";
+import Logo from "./components/Logo";
 
 const defaultTable: Table = {
   standings: []
@@ -31,6 +32,7 @@ const App: React.FC = () => {
   if (!started) {
     return (
       <>
+        <Logo />
         <h1>Leagues</h1>
         <TeamSelection teams={teams} onCreateTeam={handleCreateTeam} />
         <button onClick={handleStart}>Start</button>
