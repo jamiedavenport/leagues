@@ -4,9 +4,12 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { ThemeProvider } from "emotion-theming";
 import theme from "./theme.json";
+import { Global } from "@emotion/core";
+import GlobalStyle from "./globalStyle";
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
+    <Global styles={GlobalStyle} />
     <App />
   </ThemeProvider>,
   document.getElementById("root")
