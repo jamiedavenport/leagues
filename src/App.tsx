@@ -9,6 +9,7 @@ import { emptyTable } from "./table/empty";
 import { calculateTable } from "./table/calculate";
 import Logo from "./components/Logo";
 import Button from "./components/Button";
+import SelectionScene from "./scenes/SelectionScene";
 
 const defaultTable: Table = {
   standings: []
@@ -32,12 +33,11 @@ const App: React.FC = () => {
 
   if (!started) {
     return (
-      <>
-        <Logo />
-        <h1>Leagues</h1>
-        <TeamSelection teams={teams} onCreateTeam={handleCreateTeam} />
-        <Button onClick={handleStart}>Start</Button>
-      </>
+      <SelectionScene
+        teams={teams}
+        onCreateTeam={handleCreateTeam}
+        onStart={handleStart}
+      />
     );
   }
 

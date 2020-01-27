@@ -8,12 +8,9 @@ interface Props {
 
 const TeamSelection: React.FC<Props> = ({ teams, onCreateTeam }) => (
   <>
-    <h2>Team Selection</h2>
-    <ul>
-      {teams.map(team => (
-        <li key={team}>{team}</li>
-      ))}
-    </ul>
+    {teams.map(team => (
+      <div key={team}>{team}</div>
+    ))}
     <AddTeamForm onSubmit={onCreateTeam} />
   </>
 );
