@@ -2,4 +2,6 @@
 
 # Leagues
 
+![](https://github.com/jamiedavenport/leagues/workflows/ci/badge.svg)
+
 League generator
