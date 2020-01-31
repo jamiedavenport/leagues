@@ -5,7 +5,6 @@ import { colour, darker } from "../style/colour";
 const Button = styled.button`
   font-size: 1rem;
   padding: 0.5rem;
-  border-radius: 0.15rem;
   color: white;
   border: 1px solid ${colour("primary")};
   background-color: ${colour("primary")};

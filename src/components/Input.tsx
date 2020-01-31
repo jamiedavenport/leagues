@@ -2,11 +2,12 @@ import React from "react";
 import styled from "../styled";
 
 const Input = styled.input`
+  flex: 1;
+
   font-size: 1rem;
   padding: 0.5rem;
-  border-radius: 0.15rem;
   outline: none;
-  border: 1px solid black;
+  border: none;
 `;
 
 export default Input;

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "../styled";
 
 const Img = styled.img`
-  width: 150px;
+  width: 100px;
   border-radius: 20px;
 `;
 
