@@ -1,6 +1,30 @@
 import React, { FormEvent } from "react";
 import { Fixture } from "../fixture/types";
-import Input from "./Input";
+import styled from "../styled";
+import ScoreInput from "./ScoreInput";
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.5rem;
+`;
+
+const TeamName = styled.div`
+  flex: 1;
+`;
+
+const HomeTeam = styled(TeamName)`
+  text-align: right;
+  margin-right: 0.25rem;
+`;
+
+const AwayTeam = styled(TeamName)`
+  text-align: left;
+  margin-left: 0.25rem;
+`;
 
 interface Props {
   fixture: Fixture;
@@ -37,11 +61,20 @@ const FixtureResult: React.FC<Props> = ({ fixture, onChange }) => {
   };
 
   return (
-    <div>
-      <Input value={fixture.homeScore || ""} onChange={handleHomeChange} />
-      {fixture.homeTeam} - {fixture.awayTeam}
-      <Input value={fixture.awayScore || ""} onChange={handleAwayChange} />
-    </div>
+    <Container>
+      <HomeTeam>{fixture.homeTeam}</HomeTeam>
+      <ScoreInput
+        value={fixture.homeScore || ""}
+        onChange={handleHomeChange}
+        placeholder="2"
+      />
+      <ScoreInput
+        value={fixture.awayScore || ""}
+        onChange={handleAwayChange}
+        placeholder="1"
+      />
+      <AwayTeam>{fixture.awayTeam}</AwayTeam>
+    </Container>
   );
 };
 

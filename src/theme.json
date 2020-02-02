@@ -1,5 +1,6 @@
 {
   "colours": {
-    "primary": "#30ac66"
+    "primary": "#30ac66",
+    "highlight": "#ffe600"
   }
 }

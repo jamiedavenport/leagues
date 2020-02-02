@@ -9,7 +9,6 @@ interface Props {
 
 const FixtureList: React.FC<Props> = ({ fixtures, onChange }) => (
   <>
-    <h2>Fixture List</h2>
     {fixtures.map((fixture, index) => {
       const handleChange = (updatedFixture: Fixture) => {
         const updatedFixtures = [...fixtures];
