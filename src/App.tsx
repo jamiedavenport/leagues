@@ -1,15 +1,11 @@
 import React, { useState } from "react";
-import TeamSelection from "./components/TeamSelection";
-import FixtureList from "./components/FixtureList";
 import { Fixture } from "./fixture/types";
 import { generateFixtures } from "./fixture/generate";
 import { Table } from "./table/types";
-import LeagueTable from "./components/LeagueTable";
 import { emptyTable } from "./table/empty";
 import { calculateTable } from "./table/calculate";
-import Logo from "./components/Logo";
-import Button from "./components/Button";
 import SelectionScene from "./scenes/SelectionScene";
+import ResultsScene from "./scenes/ResultsScene";
 
 const defaultTable: Table = {
   standings: []
@@ -47,11 +43,11 @@ const App: React.FC = () => {
   };
 
   return (
-    <>
-      <FixtureList fixtures={fixtures} onChange={handleFixturesChange} />
-      <b>Live Table</b>
-      <LeagueTable table={table} />
-    </>
+    <ResultsScene
+      fixtures={fixtures}
+      table={table}
+      onFixturesChange={handleFixturesChange}
+    />
   );
 };
 
