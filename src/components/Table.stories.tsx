@@ -24,10 +24,10 @@ export const withContent = () => (
 
 export const withHeader = () => (
   <Table>
-    <Header>
-      <Col>H1</Col>
-      <Col>H2</Col>
-    </Header>
+    <Row>
+      <Header>H1</Header>
+      <Header>H2</Header>
+    </Row>
     <Row>
       <Col>A</Col>
       <Col>B</Col>

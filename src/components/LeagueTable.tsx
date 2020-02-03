@@ -9,17 +9,17 @@ interface Props {
 const LeagueTable: React.FC<Props> = ({ table }) => {
   return (
     <Tbl>
-      <Header>
-        <Col>Team</Col>
-        <Col>Played</Col>
-        <Col>Won</Col>
-        <Col>Drawn</Col>
-        <Col>Lost</Col>
-        <Col>Goals For</Col>
-        <Col>Goals Against</Col>
-        <Col>Goal Difference</Col>
-        <Col>Points</Col>
-      </Header>
+      <Row>
+        <Header>Team</Header>
+        <Header>Played</Header>
+        <Header>Won</Header>
+        <Header>Drawn</Header>
+        <Header>Lost</Header>
+        <Header>Goals For</Header>
+        <Header>Goals Against</Header>
+        <Header>Goal Difference</Header>
+        <Header>Points</Header>
+      </Row>
       {table.standings.map(standing => (
         <Row key={standing.team}>
           <Col>{standing.team}</Col>

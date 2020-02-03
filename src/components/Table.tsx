@@ -1,37 +1,28 @@
 import styled from "../styled";
-import { css } from "@emotion/core";
 
-const Table = styled.div`
-  display: flex;
+const Table = styled.table`
+  width: 100%;
   flex-direction: column;
+  border-spacing: 0;
 `;
 
-const rowStyle = css`
-  display: flex;
-  flex-direction: row;
-
-  padding: 0.25rem;
-`;
-
-export const Row = styled.div`
-  ${rowStyle};
-
+export const Row = styled.tr`
   &:nth-child(odd) {
     background-color: rgba(0, 0, 0, 0.05);
   }
 `;
 
-export const Header = styled.div`
-  ${rowStyle};
+export const Header = styled.th`
+  padding: 0.25rem;
 
+  font-size: 0.9em;
   font-weight: bold;
+  text-align: start;
 
   background-color: rgba(0, 0, 0, 0.1);
 `;
 
-export const Col = styled.div`
-  flex: 1;
-
+export const Col = styled.td`
   padding: 0.25rem;
 `;
 
