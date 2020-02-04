@@ -1,4 +1,5 @@
 import { css } from "@emotion/core";
+import theme from "./theme.json";
 
 export default css`
   html,
@@ -6,10 +7,10 @@ export default css`
     padding: 0;
     margin: 0;
 
+    background-color: ${theme.colours.dark};
+    color: white;
+
     font-size: 18px;
-    /* font-family: 'Bangers', cursive; */
-    /* font-family: 'Montserrat', sans-serif; */
-    /* font-family: 'Open Sans', sans-serif; */
-    font-family: "Roboto", sans-serif;
+    font-family: "Raleway", sans-serif;
   }
 `;
