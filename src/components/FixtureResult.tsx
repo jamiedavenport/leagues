@@ -42,6 +42,8 @@ const getScore = (e: FormEvent<HTMLInputElement>) => {
     return undefined;
   }
 
+  console.log(score);
+
   return score;
 };
 
@@ -64,12 +66,16 @@ const FixtureResult: React.FC<Props> = ({ fixture, onChange }) => {
     <Container>
       <HomeTeam>{fixture.homeTeam}</HomeTeam>
       <ScoreInput
-        value={fixture.homeScore || ""}
+        type="number"
+        min="0"
+        value={fixture.homeScore}
         onChange={handleHomeChange}
         placeholder="2"
       />
       <ScoreInput
-        value={fixture.awayScore || ""}
+        type="number"
+        min="0"
+        value={fixture.awayScore}
         onChange={handleAwayChange}
         placeholder="1"
       />
