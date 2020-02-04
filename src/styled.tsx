@@ -5,6 +5,11 @@ export type Theme = {
     primary: string;
     highlight: string;
   };
+
+  page: {
+    width: string;
+    padding: string;
+  };
   // ...
 };
 

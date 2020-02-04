@@ -6,6 +6,7 @@ import { emptyTable } from "./table/empty";
 import { calculateTable } from "./table/calculate";
 import SelectionScene from "./scenes/SelectionScene";
 import ResultsScene from "./scenes/ResultsScene";
+import Page from "./components/Page";
 
 const defaultTable: Table = {
   standings: []
@@ -51,6 +52,6 @@ const defaultTable: Table = {
 //   );
 // };
 
-const App: React.FC = () => <p>This is some text</p>;
+const App: React.FC = () => <Page>Hello World</Page>;
 
 export default App;

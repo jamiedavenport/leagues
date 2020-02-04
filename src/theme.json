@@ -3,5 +3,9 @@
     "dark": "#1D1D1D",
     "primary": "#30ac66",
     "highlight": "#ffe600"
+  },
+  "page": {
+    "width": "1200px",
+    "padding": "2rem"
   }
 }
