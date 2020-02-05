@@ -8,6 +8,7 @@ import SelectionScene from "./scenes/SelectionScene";
 import ResultsScene from "./scenes/ResultsScene";
 import Page from "./components/Page";
 import Panels, { Panel } from "./components/Panels";
+import Card, { CardBody, CardButton, CardHeader } from "./components/Card";
 
 const defaultTable: Table = {
   standings: []
@@ -57,7 +58,13 @@ const App: React.FC = () => (
   <Page>
     <Panels>
       <Panel>Panel 1</Panel>
-      <Panel>Panel 2</Panel>
+      <Panel>
+        <Card>
+          <CardHeader>Team Selection</CardHeader>
+          <CardBody></CardBody>
+          <CardButton>START</CardButton>
+        </Card>
+      </Panel>
     </Panels>
   </Page>
 );

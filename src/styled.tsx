@@ -3,6 +3,7 @@ import styled, { CreateStyled } from "@emotion/styled/macro";
 export type Theme = {
   colours: {
     primary: string;
+    dark: string;
     highlight: string;
   };
 
