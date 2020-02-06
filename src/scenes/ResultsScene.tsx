@@ -4,23 +4,10 @@ import { Fixture } from "../fixture/types";
 import LeagueTable from "../components/LeagueTable";
 import { Table } from "../table/types";
 import styled from "../styled";
-
-const Page = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  @media (min-width: 800px) {
-    flex-direction: row;
-  }
-`;
-
-const ResultsContainer = styled.div`
-  flex: 1;
-`;
-
-const TableContainer = styled.div`
-  flex: 1;
-`;
+import Panels, { Panel } from "../components/Panels";
+import Card, { CardHeader, CardBody } from "../components/Card";
+import Logo from "../components/Logo";
+import Page from "../components/Page";
 
 interface Props {
   fixtures: Fixture[];
@@ -34,12 +21,20 @@ const ResultsScene: React.FC<Props> = ({
   onFixturesChange
 }) => (
   <Page>
-    <ResultsContainer>
-      <FixtureList fixtures={fixtures} onChange={onFixturesChange} />
-    </ResultsContainer>
-    <TableContainer>
-      <LeagueTable table={table} />
-    </TableContainer>
+    <Panels>
+      <Panel>
+        <Logo />
+        <FixtureList fixtures={fixtures} onChange={onFixturesChange} />
+      </Panel>
+      <Panel>
+        <Card>
+          <CardHeader>Team Selection</CardHeader>
+          <CardBody>
+            <LeagueTable table={table} />
+          </CardBody>
+        </Card>
+      </Panel>
+    </Panels>
   </Page>
 );
 

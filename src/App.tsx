@@ -15,61 +15,44 @@ const defaultTable: Table = {
   standings: []
 };
 
-// const App: React.FC = () => {
-//   const [started, setStarted] = useState(false);
-//   const [teams, setTeams] = useState<string[]>([]);
-//   const [fixtures, setFixtures] = useState<Fixture[]>([]);
-//   const [table, setTable] = useState<Table>(defaultTable);
+const App: React.FC = () => {
+  const [started, setStarted] = useState(false);
+  const [teams, setTeams] = useState<string[]>([]);
+  const [fixtures, setFixtures] = useState<Fixture[]>([]);
+  const [table, setTable] = useState<Table>(defaultTable);
 
-//   const handleCreateTeam = (team: string) => {
-//     setTeams([...teams, team]);
-//   };
+  const handleCreateTeam = (team: string) => {
+    setTeams([...teams, team]);
+  };
 
-//   const handleStart = () => {
-//     setFixtures(generateFixtures(teams));
-//     setStarted(true);
-//     setTable(emptyTable(teams));
-//   };
+  const handleStart = () => {
+    setFixtures(generateFixtures(teams));
+    setStarted(true);
+    setTable(emptyTable(teams));
+  };
 
-//   if (!started) {
-//     return (
-//       <SelectionScene
-//         teams={teams}
-//         onCreateTeam={handleCreateTeam}
-//         onStart={handleStart}
-//       />
-//     );
-//   }
+  if (!started) {
+    return (
+      <SelectionScene
+        teams={teams}
+        onCreateTeam={handleCreateTeam}
+        onStart={handleStart}
+      />
+    );
+  }
 
-//   const handleFixturesChange = (updatedFixtures: Fixture[]) => {
-//     setFixtures(updatedFixtures);
-//     setTable(calculateTable(updatedFixtures));
-//   };
+  const handleFixturesChange = (updatedFixtures: Fixture[]) => {
+    setFixtures(updatedFixtures);
+    setTable(calculateTable(updatedFixtures));
+  };
 
-//   return (
-//     <ResultsScene
-//       fixtures={fixtures}
-//       table={table}
-//       onFixturesChange={handleFixturesChange}
-//     />
-//   );
-// };
-
-const App: React.FC = () => (
-  <Page>
-    <Panels>
-      <Panel>
-        <Logo />
-      </Panel>
-      <Panel>
-        <Card>
-          <CardHeader>Team Selection</CardHeader>
-          <CardBody>Content Here</CardBody>
-          <CardButton>START</CardButton>
-        </Card>
-      </Panel>
-    </Panels>
-  </Page>
-);
+  return (
+    <ResultsScene
+      fixtures={fixtures}
+      table={table}
+      onFixturesChange={handleFixturesChange}
+    />
+  );
+};
 
 export default App;
