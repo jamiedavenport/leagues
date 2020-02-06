@@ -1,6 +1,5 @@
 import React from "react";
 import AddTeamForm from "./AddTeamForm";
-import styled from "../styled";
 import List, { ListItem } from "./List";
 
 interface Props {

@@ -3,7 +3,6 @@ import FixtureList from "../components/FixtureList";
 import { Fixture } from "../fixture/types";
 import LeagueTable from "../components/LeagueTable";
 import { Table } from "../table/types";
-import styled from "../styled";
 import Panels, { Panel } from "../components/Panels";
 import Card, { CardHeader, CardBody } from "../components/Card";
 import Logo from "../components/Logo";

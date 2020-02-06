@@ -6,10 +6,6 @@ import { emptyTable } from "./table/empty";
 import { calculateTable } from "./table/calculate";
 import SelectionScene from "./scenes/SelectionScene";
 import ResultsScene from "./scenes/ResultsScene";
-import Page from "./components/Page";
-import Panels, { Panel } from "./components/Panels";
-import Card, { CardBody, CardButton, CardHeader } from "./components/Card";
-import Logo from "./components/Logo";
 
 const defaultTable: Table = {
   standings: []
