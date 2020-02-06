@@ -64,7 +64,7 @@ const App: React.FC = () => (
       <Panel>
         <Card>
           <CardHeader>Team Selection</CardHeader>
-          <CardBody></CardBody>
+          <CardBody>Content Here</CardBody>
           <CardButton>START</CardButton>
         </Card>
       </Panel>

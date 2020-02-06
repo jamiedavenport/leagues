@@ -2,6 +2,9 @@ import styled from "../styled";
 import { colour, darker } from "../style/colour";
 
 const Card = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   background-color: white;
   color: ${colour("dark")};
   box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.25);
@@ -17,11 +20,14 @@ export const CardHeader = styled.div`
   padding: 0.75rem;
 `;
 
-export const CardBody = styled.div``;
+export const CardBody = styled.div`
+  flex: 1;
+`;
 
 export const CardButton = styled.button`
   background-color: ${colour("primary")};
   color: white;
+  cursor: pointer;
 
   width: 100%;
 
