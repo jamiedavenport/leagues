@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "../styled";
 
 const Input = styled.input`
@@ -7,7 +6,9 @@ const Input = styled.input`
   font-size: 1rem;
   padding: 0.5rem;
   outline: none;
-  border: none;
+  border: 0;
+  border-radius: 0.5rem;
+  box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.25);
 `;
 
 export default Input;

@@ -10,7 +10,7 @@ interface Props {
 const Container = styled.div``;
 
 const Row = styled.div`
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
 
   &:nth-child(odd) {
     background-color: #f2f2f2;
