@@ -1,29 +1,22 @@
 import React from "react";
 import AddTeamForm from "./AddTeamForm";
 import styled from "../styled";
+import List, { ListItem } from "./List";
 
 interface Props {
   teams: string[];
   onCreateTeam: (team: string) => void;
 }
 
-const Container = styled.div``;
-
-const Row = styled.div`
-  padding: 0.5rem 1rem;
-
-  &:nth-child(odd) {
-    background-color: #f2f2f2;
-  }
-`;
-
 const TeamSelection: React.FC<Props> = ({ teams, onCreateTeam }) => (
-  <Container>
+  <List>
     {teams.map(team => (
-      <Row key={team}>{team}</Row>
+      <ListItem key={team}>{team}</ListItem>
     ))}
-    <AddTeamForm onSubmit={onCreateTeam} />
-  </Container>
+    <ListItem>
+      <AddTeamForm onSubmit={onCreateTeam} />
+    </ListItem>
+  </List>
 );
 
 export default TeamSelection;
