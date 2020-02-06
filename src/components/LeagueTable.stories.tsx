@@ -29,6 +29,17 @@ const table: Table = {
       goalsAgainst: 10,
       goalDifference: -7,
       points: 1
+    },
+    {
+      team: "Manchester",
+      played: 3,
+      won: 0,
+      drawn: 0,
+      lost: 3,
+      goalsFor: 3,
+      goalsAgainst: 15,
+      goalDifference: -12,
+      points: 0
     }
   ]
 };
