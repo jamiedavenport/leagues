@@ -67,12 +67,12 @@ const FixtureResult: React.FC<Props> = ({ fixture, onChange }) => {
     <Container>
       <HomeTeam>{fixture.homeTeam}</HomeTeam>
       <ScoreInput
-        value={fixture.homeScore}
+        value={fixture.homeScore || ""}
         onChange={handleHomeChange}
         placeholder="-"
       />
       <ScoreInput
-        value={fixture.awayScore}
+        value={fixture.awayScore || ""}
         onChange={handleAwayChange}
         placeholder="-"
       />
