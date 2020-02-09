@@ -21,7 +21,7 @@ const Row = styled.tr`
 `;
 
 const cellStyles = css`
-  padding: 1rem;
+  padding: 0.5rem;
 `;
 
 const Header = styled.th`
