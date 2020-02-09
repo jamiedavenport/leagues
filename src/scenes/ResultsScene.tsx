@@ -7,6 +7,7 @@ import Panels, { Panel } from "../components/Panels";
 import Card, { CardHeader, CardBody } from "../components/Card";
 import Logo from "../components/Logo";
 import Page from "../components/Page";
+import Footer from "../components/Footer";
 
 interface Props {
   fixtures: Fixture[];
@@ -32,6 +33,7 @@ const ResultsScene: React.FC<Props> = ({
             onChange={onFixturesChange}
             nextGame={() => setGameDay(gameDay + 1)}
           />
+          <Footer />
         </Panel>
         <Panel>
           <Card>

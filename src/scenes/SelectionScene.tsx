@@ -4,6 +4,7 @@ import TeamSelection from "../components/TeamSelection";
 import Panels, { Panel } from "../components/Panels";
 import Card, { CardHeader, CardBody, CardButton } from "../components/Card";
 import Page from "../components/Page";
+import Footer from "../components/Footer";
 
 interface Props {
   teams: string[];
@@ -16,6 +17,7 @@ const SelectionScene: React.FC<Props> = ({ teams, onCreateTeam, onStart }) => (
     <Panels>
       <Panel>
         <Logo />
+        <Footer />
       </Panel>
       <Panel>
         <Card>
