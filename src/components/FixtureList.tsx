@@ -8,6 +8,13 @@ const Container = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
+`;
+
+const Buffer = styled.div`
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
 `;
 
@@ -42,7 +49,9 @@ const FixtureList: React.FC<Props> = ({
     }
   };
 
-  const list = [];
+  const prev = [];
+  let current;
+  const next = [];
   for (let i = lower; i <= upper; i++) {
     let el = (
       <FixtureResult
@@ -52,18 +61,22 @@ const FixtureList: React.FC<Props> = ({
       />
     );
 
-    if (i === gameDay) {
-      el = (
-        <Highlight key={i} title="Next Game">
-          {el}
-        </Highlight>
-      );
+    if (i < gameDay) {
+      prev.push(el);
+    } else if (i === gameDay) {
+      current = <Highlight title="Next Game">{el}</Highlight>;
+    } else {
+      next.push(el);
     }
-
-    list.push(el);
   }
 
-  return <Container>{list}</Container>;
+  return (
+    <Container>
+      <Buffer>{prev}</Buffer>
+      {current}
+      <Buffer>{next}</Buffer>
+    </Container>
+  );
 };
 
 export default FixtureList;
