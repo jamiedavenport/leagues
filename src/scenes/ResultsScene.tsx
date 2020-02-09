@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import FixtureList from "../components/FixtureList";
 import { Fixture } from "../fixture/types";
 import LeagueTable from "../components/LeagueTable";
@@ -18,27 +18,32 @@ const ResultsScene: React.FC<Props> = ({
   fixtures,
   table,
   onFixturesChange
-}) => (
-  <Page>
-    <Panels>
-      <Panel>
-        <Logo />
-        <FixtureList
-          gameDay={1}
-          fixtures={fixtures}
-          onChange={onFixturesChange}
-        />
-      </Panel>
-      <Panel>
-        <Card>
-          <CardHeader>Team Selection</CardHeader>
-          <CardBody>
-            <LeagueTable table={table} />
-          </CardBody>
-        </Card>
-      </Panel>
-    </Panels>
-  </Page>
-);
+}) => {
+  const [gameDay, setGameDay] = useState(0);
+
+  return (
+    <Page>
+      <Panels>
+        <Panel>
+          <Logo />
+          <FixtureList
+            gameDay={gameDay}
+            fixtures={fixtures}
+            onChange={onFixturesChange}
+            nextGame={() => setGameDay(gameDay + 1)}
+          />
+        </Panel>
+        <Panel>
+          <Card>
+            <CardHeader>Team Selection</CardHeader>
+            <CardBody>
+              <LeagueTable table={table} />
+            </CardBody>
+          </Card>
+        </Panel>
+      </Panels>
+    </Page>
+  );
+};
 
 export default ResultsScene;
