@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "../styled";
-import { colour, darker } from "../style/colour";
+import Link from "./Link";
 
 const Header = styled.h1`
   margin: 0;
@@ -8,15 +8,6 @@ const Header = styled.h1`
 
 const Subheader = styled.p`
   margin: 0;
-`;
-
-const Link = styled.a`
-  text-decoration: none;
-  color: ${colour("primary")};
-
-  &:hover {
-    color: ${darker("primary", 0.05)};
-  }
 `;
 
 const Logo: React.FC = () => (
