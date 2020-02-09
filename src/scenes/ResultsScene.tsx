@@ -23,7 +23,11 @@ const ResultsScene: React.FC<Props> = ({
     <Panels>
       <Panel>
         <Logo />
-        <FixtureList fixtures={fixtures} onChange={onFixturesChange} />
+        <FixtureList
+          gameDay={1}
+          fixtures={fixtures}
+          onChange={onFixturesChange}
+        />
       </Panel>
       <Panel>
         <Card>

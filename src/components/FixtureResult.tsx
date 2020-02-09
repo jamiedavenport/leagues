@@ -41,8 +41,6 @@ const getScore = (e: FormEvent<HTMLInputElement>) => {
     return undefined;
   }
 
-  console.log(score);
-
   return score;
 };
 
