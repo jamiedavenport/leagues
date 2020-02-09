@@ -63,16 +63,24 @@ const FixtureResult: React.FC<Props> = ({ fixture, onChange }) => {
     });
   };
 
+  const handleUndefined = (val: number | undefined): string => {
+    if (typeof val === "undefined") {
+      return "";
+    }
+
+    return val + "";
+  };
+
   return (
     <Container>
       <HomeTeam>{fixture.homeTeam}</HomeTeam>
       <ScoreInput
-        value={fixture.homeScore || ""}
+        value={handleUndefined(fixture.homeScore)}
         onChange={handleHomeChange}
         placeholder="-"
       />
       <ScoreInput
-        value={fixture.awayScore || ""}
+        value={handleUndefined(fixture.awayScore)}
         onChange={handleAwayChange}
         placeholder="-"
       />
