@@ -5,5 +5,5 @@ export default {
   title: "ScoreInput"
 };
 
-export const withPlaceholder = () => <ScoreInput placeholder="2" />;
+export const withPlaceholder = () => <ScoreInput placeholder="-" />;
 export const withText = () => <ScoreInput value="2" />;

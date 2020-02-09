@@ -8,22 +8,21 @@ const Container = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
-  padding: 0.5rem;
 `;
 
 const TeamName = styled.div`
   flex: 1;
+  font-size: 1.2em;
 `;
 
 const HomeTeam = styled(TeamName)`
   text-align: right;
-  margin-right: 0.25rem;
+  margin-right: 1rem;
 `;
 
 const AwayTeam = styled(TeamName)`
   text-align: left;
-  margin-left: 0.25rem;
+  margin-left: 1rem;
 `;
 
 interface Props {
@@ -42,13 +41,13 @@ const getScore = (e: FormEvent<HTMLInputElement>) => {
     return undefined;
   }
 
-  console.log(score);
-
   return score;
 };
 
 const FixtureResult: React.FC<Props> = ({ fixture, onChange }) => {
   const handleHomeChange = (e: FormEvent<HTMLInputElement>) => {
+    e.preventDefault();
+
     onChange({
       ...fixture,
       homeScore: getScore(e)
@@ -56,28 +55,34 @@ const FixtureResult: React.FC<Props> = ({ fixture, onChange }) => {
   };
 
   const handleAwayChange = (e: FormEvent<HTMLInputElement>) => {
+    e.preventDefault();
+
     onChange({
       ...fixture,
       awayScore: getScore(e)
     });
   };
 
+  const handleUndefined = (val: number | undefined): string => {
+    if (typeof val === "undefined") {
+      return "";
+    }
+
+    return val + "";
+  };
+
   return (
     <Container>
       <HomeTeam>{fixture.homeTeam}</HomeTeam>
       <ScoreInput
-        type="number"
-        min="0"
-        value={fixture.homeScore}
+        value={handleUndefined(fixture.homeScore)}
         onChange={handleHomeChange}
-        placeholder="2"
+        placeholder="-"
       />
       <ScoreInput
-        type="number"
-        min="0"
-        value={fixture.awayScore}
+        value={handleUndefined(fixture.awayScore)}
         onChange={handleAwayChange}
-        placeholder="1"
+        placeholder="-"
       />
       <AwayTeam>{fixture.awayTeam}</AwayTeam>
     </Container>

@@ -1,6 +1,5 @@
 import React, { useState, FormEvent } from "react";
 import Input from "./Input";
-import Button from "./Button";
 import styled from "../styled";
 
 interface Props {
@@ -10,6 +9,7 @@ interface Props {
 const Form = styled.form`
   display: flex;
   flex-direction: row;
+  flex: 1;
 `;
 
 const AddTeamForm: React.FC<Props> = ({ onSubmit }) => {
@@ -28,7 +28,6 @@ const AddTeamForm: React.FC<Props> = ({ onSubmit }) => {
   return (
     <Form onSubmit={handleSubmit}>
       <Input placeholder="Team Name" value={value} onChange={handleChange} />
-      <Button type="submit">+</Button>
     </Form>
   );
 };

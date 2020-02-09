@@ -1,20 +1,24 @@
 import styled from "../styled";
 import { colour } from "../style/colour";
 
-const ScoreInput = styled.input`
-  width: 1.5rem;
+const size = "2.5rem";
 
-  resize: horizontal;
+const ScoreInput = styled.input`
+  width: ${size};
+  height: ${size};
 
   border: none;
   outline: none;
   background-color: ${colour("highlight")};
+  color: ${colour("dark")};
 
-  padding: 0.5rem;
-
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   text-align: center;
+
+  &::placeholder {
+    color: ${colour("dark")};
+  }
 `;
 
 export default ScoreInput;
